@@ -14,13 +14,14 @@ public class Util {
     public static int[][] testValues(int val){
         int numCombinations = (int) Math.pow(2,val);
         int[][] arr = new int[numCombinations][val];
+        int pos = val - 1;
 
         for (int i = 0; i < numCombinations; i++) {
-            for (int j = val - 1; j >= 0; j--) {
-                arr[i][j] = (i & (int) Math.pow(2,j)) >> j;
-                System.out.print(arr[i][j]);
+            for (int j = 0; j < val; j++) {
+                arr[i][pos] = (i & (int) Math.pow(2,j)) >> j;
+                pos--;
             }
-            System.out.println();
+            pos = val - 1;
         }
         return arr;
     }
@@ -47,11 +48,11 @@ public class Util {
     public static void main(String[] args){
         int[][] arr = testValues(3);
 
-//        for (int i = 0; i < arr.length; i++) {
-//            for (int j = 0; j < arr[0].length; j++) {
-//                System.out.print(arr[i][j]);
-//            }
-//            System.out.println();
-//        }
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[0].length; j++) {
+                System.out.print(arr[i][j]);
+            }
+            System.out.println();
+        }
     }
 }
