@@ -32,27 +32,43 @@ public class Util {
     public static String truthTable(Input[] inputs, Wire output){
         String str = "";
         int numIn = inputs.length;
+        int[][] arr = testValues(numIn);
 
-        //Start of print statements for debugging while working
-        for (Input i : inputs) {
-           System.out.println("Input: " + i.name);
+        //Print the top of the truth table
+        for (int i = 0; i < numIn; i++) {
+            System.out.print("x" + i + " ");
         }
-        System.out.println("Output: " + output.name);
-        System.out.println("Number of Inputs: " + numIn);
+        System.out.println("| F");
 
-        //End of print statements for debugging while working
+        for (int i = 0; i < numIn; i++) {
+            System.out.print("---");
+        }
+        System.out.print("|---");
+        System.out.println();
 
+
+        //Print Inputs and Outputs
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < numIn; j++) {
+                inputs[j].setVal(toBool(arr[i][j]));
+                System.out.print(arr[i][j] + "  ");
+            }
+            System.out.println("| " + toInt(output.getOut()));
+        }
+        System.out.println();
         return str;
     }
 
     public static void main(String[] args){
-        int[][] arr = testValues(3);
+        Wire w_in1 = new Wire();
+        Wire w_in2 = new Wire();
+        AND and = new AND(w_in1,w_in2);
+        Input Input1 = new Input(w_in1, false);
+        Input Input2 = new Input(w_in2, false);
 
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < arr[0].length; j++) {
-                System.out.print(arr[i][j]);
-            }
-            System.out.println();
-        }
+        NOT not = new NOT(w_in1);
+
+        Util.truthTable(new Input[]{Input1,Input2}, and.W_out);
+        Util.truthTable(new Input[]{Input1}, not.W_out);
     }
 }
