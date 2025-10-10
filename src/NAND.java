@@ -42,33 +42,6 @@ public class NAND extends Gates{
 
     //----------------------------------------- Accessors -----------------------------------------------------
 
-//    static String truthTable() {
-//        //String str = Gates.truthTable();
-//        String str = "";
-//        str += "x1 x2 | out\n" +
-//                "------|-----\n";
-//
-//        // Generate truth table
-//        Wire Input_Wire = new Wire("In1");
-//        Wire Input_Wire2 = new Wire("In2");
-//
-//        Input Input1 = new Input(Input_Wire, false, "In1");
-//        Input Input2 = new Input(Input_Wire2, false, "In2");
-//
-//        NAND nand1 = new NAND(Input_Wire, Input_Wire2);
-//
-//        str += " " + Util.toInt(Input_Wire.getOut()) + "  " + Util.toInt(Input_Wire2.getOut()) + " | "+ Util.toInt(nand1.getOut()) + "\n";
-//        Input2.setVal(true);
-//        str += " " + Util.toInt(Input_Wire.getOut()) + "  " + Util.toInt(Input_Wire2.getOut()) + " | "+ Util.toInt(nand1.getOut()) + "\n";
-//        Input1.setVal(true);
-//        Input2.setVal(false);
-//        str += " " + Util.toInt(Input_Wire.getOut()) + "  " + Util.toInt(Input_Wire2.getOut()) + " | "+ Util.toInt(nand1.getOut()) + "\n";
-//        Input1.setVal(true);
-//        Input2.setVal(true);
-//        str += " " + Util.toInt(Input_Wire.getOut()) + "  " + Util.toInt(Input_Wire2.getOut()) + " | "+ Util.toInt(nand1.getOut()) + "\n";
-//
-//        return str;
-//    }
 
     //----------------------------------------- Testing -------------------------------------------------------
     public static void main(String[] args){

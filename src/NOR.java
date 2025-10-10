@@ -35,16 +35,6 @@ public class NOR extends Gates{
 
         NOR nor1 = new NOR(Input_Wire, Input_Wire2);
 
-        System.out.println(nor1.W_out);
-
-        System.out.println("Inputs: " + Input_Wire.getOut() + ", " + Input_Wire2.getOut() + ", Result: "+ nor1.getOut());
-        Input2.setVal(true);
-        System.out.println("Inputs: " + Input_Wire.getOut()+ ", "  + Input_Wire2.getOut() + ", Result: "+ nor1.getOut());
-        Input1.setVal(true);
-        Input2.setVal(false);
-        System.out.println("Inputs: " + Input_Wire.getOut()+ ", "  + Input_Wire2.getOut() + ", Result: "+ nor1.getOut());
-        Input1.setVal(true);
-        Input2.setVal(true);
-        System.out.println("Inputs: " + Input_Wire.getOut()+ ", "  + Input_Wire2.getOut() + ", Result: "+ nor1.getOut());
+        System.out.println(Util.truthTable(new Input[]{Input1,Input2}, nor1.W_out));
     }
 }

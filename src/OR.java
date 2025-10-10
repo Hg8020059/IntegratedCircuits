@@ -24,18 +24,6 @@ public class OR extends Gates{
 
         OR or1 = new OR(Input_Wire, Input_Wire2);
 
-        System.out.println(or1.nor.W_out);
-        System.out.println(or1.not.W_out);
-        System.out.println(or1.W_out);
-
-        System.out.println("Inputs: " + Input_Wire.getOut() + ", " + Input_Wire2.getOut() + ", Result: "+ or1.getOut());
-        Input2.setVal(true);
-        System.out.println("Inputs: " + Input_Wire.getOut()+ ", "  + Input_Wire2.getOut() + ", Result: "+ or1.getOut());
-        Input1.setVal(true);
-        Input2.setVal(false);
-        System.out.println("Inputs: " + Input_Wire.getOut()+ ", "  + Input_Wire2.getOut() + ", Result: "+ or1.getOut());
-        Input1.setVal(true);
-        Input2.setVal(true);
-        System.out.println("Inputs: " + Input_Wire.getOut()+ ", "  + Input_Wire2.getOut() + ", Result: "+ or1.getOut());
+        System.out.println(Util.truthTable(new Input[]{Input1,Input2}, or1.W_out));
     }
 }

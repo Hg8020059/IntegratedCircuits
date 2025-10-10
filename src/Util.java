@@ -70,5 +70,10 @@ public class Util {
 
         Util.truthTable(new Input[]{Input1,Input2}, and.W_out);
         Util.truthTable(new Input[]{Input1}, not.W_out);
+
+        not.init(and.W_out);
+
+        Util.truthTable(new Input[]{Input1, Input2}, not.W_out);
+
     }
 }
