@@ -1,13 +1,16 @@
+package Gates;
+import Basics.*;
+
 public class NAND extends Gates{
-    static int numInputs = 2;
+    public static int numInputs = 2;
 
-    PMOS p1;
-    PMOS p2;
-    NMOS n1;
-    NMOS n2;
+    public PMOS p1;
+    public PMOS p2;
+    public NMOS n1;
+    public NMOS n2;
 
-    Wire W_input1;
-    Wire W_input2;
+    public Wire W_input1;
+    public Wire W_input2;
     //----------------------------------------- Constructors --------------------------------------------------
 
     NAND(){
@@ -26,7 +29,7 @@ public class NAND extends Gates{
     //----------------------------------------- Mutators ------------------------------------------------------
 
     void init(Wire inputWire, Wire inputWire2){
-        //sets the input wire that was passed in as W_input, then uses that while declaring the PMOS and NMOS as their controls
+        //sets the input wire that was passed in as W_input, then uses that while declaring the Gates.PMOS and Gates.NMOS as their controls
         // Set the input before setting things that depend on the input wire
         W_input1 = inputWire;
         W_input2 = inputWire2;
@@ -34,7 +37,7 @@ public class NAND extends Gates{
         p1 = new PMOS(W_vpp, W_input1, W_out);
         p2 = new PMOS(W_vpp, W_input2, W_out);
 
-        Wire n1out = new Wire("NMOS 1 out");
+        Wire n1out = new Wire("Gates.NMOS 1 out");
 
         n1 = new NMOS(W_ground, W_input1, n1out);
         n2 = new NMOS(n1out, W_input2, W_out);

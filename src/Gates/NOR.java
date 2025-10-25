@@ -1,19 +1,22 @@
-public class NOR extends Gates{
-    PMOS p1;
-    PMOS p2;
-    NMOS n1;
-    NMOS n2;
+package Gates;
+import Basics.*;
 
-    Wire W_input1;
-    Wire W_input2;
+public class NOR extends Gates{
+    public PMOS p1;
+    public PMOS p2;
+    public NMOS n1;
+    public NMOS n2;
+
+    public Wire W_input1;
+    public Wire W_input2;
     //----------------------------------------- Constructors --------------------------------------------------
-    NOR(Wire inputWire, Wire inputWire2){
-        //sets the input wire that was passed in as W_input, then uses that while declaring the PMOS and NMOS as their controls
+    public NOR(Wire inputWire, Wire inputWire2){
+        //sets the input wire that was passed in as W_input, then uses that while declaring the Gates.PMOS and Gates.NMOS as their controls
         // Set the input before setting things that depend on the input wire
         W_input1 = inputWire;
         W_input2 = inputWire2;
 
-        Wire p1out = new Wire("PMOS 1 out");
+        Wire p1out = new Wire("Gates.PMOS 1 out");
 
         p1 = new PMOS(W_vpp, W_input1, p1out);
         p2 = new PMOS(p1out, W_input2, W_out);

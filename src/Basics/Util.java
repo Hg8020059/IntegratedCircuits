@@ -1,3 +1,8 @@
+package Basics;
+
+import Gates.AND;
+import Gates.NOT;
+
 import java.lang.Math;
 
 public class Util {
@@ -11,6 +16,7 @@ public class Util {
     }
 
     //Takes a number of inputs and generates an array of all the possible input combinations for that number of inputs
+    //Mainly a helper function for truthTable atm
     public static int[][] testValues(int val){
         int numCombinations = (int) Math.pow(2,val);
         int[][] arr = new int[numCombinations][val];

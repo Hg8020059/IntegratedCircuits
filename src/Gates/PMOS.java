@@ -1,13 +1,16 @@
+package Gates;
+import Basics.*;
+
 public class PMOS extends Transistor {
-    static int pmosNoNameCount = 1;
+    public static int pmosNoNameCount = 1;
 
     //----------------------------------------- Constructors --------------------------------------------------
 
-    PMOS(Wire input, Wire control, Wire output) {
-        super(input, control, output, "PMOS"+ pmosNoNameCount++);
+    public PMOS(Wire input, Wire control, Wire output) {
+        super(input, control, output, "Gates.PMOS"+ pmosNoNameCount++);
     }
 
-    PMOS(Wire input, Wire control, Wire output, String name){
+    public PMOS(Wire input, Wire control, Wire output, String name){
         super(input, control, output, name);
     }
 
@@ -15,7 +18,7 @@ public class PMOS extends Transistor {
 
     //----------------------------------------- Accessors -----------------------------------------------------
 
-    Boolean getOut() {
+    public Boolean getOut() {
         if(control.getOut() == true){
             return false;
         }

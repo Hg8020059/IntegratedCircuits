@@ -1,13 +1,16 @@
-public class NMOS extends Transistor{
-    static int nmosNoNameCount = 1;
+package Gates;
+import Basics.*;
+
+public class NMOS extends Transistor {
+    public static int nmosNoNameCount = 1;
 
     //----------------------------------------- Constructors --------------------------------------------------
 
-    NMOS(Wire input, Wire control, Wire output) {
-        super(input, control, output, "NMOS"+ nmosNoNameCount++);
+    public NMOS(Wire input, Wire control, Wire output) {
+        super(input, control, output, "Gates.NMOS"+ nmosNoNameCount++);
     }
 
-    NMOS(Wire input, Wire control, Wire output, String name){
+    public NMOS(Wire input, Wire control, Wire output, String name){
         super(input, control, output, name);
     }
 
@@ -16,7 +19,7 @@ public class NMOS extends Transistor{
     //----------------------------------------- Accessors -----------------------------------------------------
 
 
-    Boolean getOut() {
+    public Boolean getOut() {
         if(control.getOut() == false){
             return false;
         }

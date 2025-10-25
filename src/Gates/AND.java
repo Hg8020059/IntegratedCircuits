@@ -1,11 +1,14 @@
+package Gates;
+import Basics.*;
+
 public class AND extends Gates{
-    NAND nand;
-    NOT not;
-    Wire W_input1;
-    Wire W_input2;
+    public NAND nand;
+    public NOT not;
+    public Wire W_input1;
+    public Wire W_input2;
 
     public AND(Wire inputWire, Wire inputWire2){
-        //sets the input wire that was passed in as W_input, then uses that while declaring the PMOS and NMOS as their controls
+        //sets the input wire that was passed in as W_input, then uses that while declaring the Gates.PMOS and Gates.NMOS as their controls
         // Set the input before setting things that depend on the input wire
         W_input1 = inputWire;
         W_input2 = inputWire2;

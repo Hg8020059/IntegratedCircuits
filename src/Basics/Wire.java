@@ -1,23 +1,18 @@
-/*
-This class should only be used for connecting transistors to one another, as any other logic should be done with
-gates, which should never input to the same wire without a gate to first combine their signals. I should make either
-a separate wire class for gates, or just imply wires by directly connecting the output of one gate to another (I
-prefer this solution) Can probably reuse some logic from this class to get gate input arrays working though.
-*/
+package Basics;
 
 import java.util.ArrayList;
 
 public class Wire {
-    ArrayList<Basic> inputs;
-    ArrayList<Transistor> outputs = new ArrayList<>();
-    String name;
-    static int wireNoNameCount = 0;
+    public ArrayList<Basic> inputs;
+    public ArrayList<Transistor> outputs = new ArrayList<>();
+    public String name;
+    public static int wireNoNameCount = 0;
 
     //----------------------------------------- Constructors -----------------------------------------------------
 
     public Wire(){
         inputs = new ArrayList<>();
-        name = "Wire" + wireNoNameCount++;
+        name = "Basics.Wire" + wireNoNameCount++;
     }
 
     public Wire(String name){
@@ -51,7 +46,7 @@ public class Wire {
     //----------------------------------------- Accessors -----------------------------------------------------
 
     public String toString(){
-        String output = "Wire Name: " + name + "\n" + "Inputs:";
+        String output = "Basics.Wire Name: " + name + "\n" + "Inputs:";
         for (Basic item : inputs) {
             output = output.concat(item.name + ", ");
         }
@@ -75,6 +70,6 @@ public class Wire {
         System.out.println(testWire);
 
         // Testing wire.getOut
-        System.out.println("Wire Output: " + testWire.getOut());
+        System.out.println("Basics.Wire Output: " + testWire.getOut());
     }
 }

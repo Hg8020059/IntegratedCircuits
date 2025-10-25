@@ -1,16 +1,21 @@
+package Basics;
+
+import Gates.NMOS;
+import Gates.PMOS;
+
 public abstract class Transistor extends Basic{
-    Wire input;
-    Wire control;
+    public Wire input;
+    public Wire control;
 
     //----------------------------------------- Constructors --------------------------------------------------
 
-//    Transistor(Wire input, Wire output, Wire control){
+//    Basics.Transistor(Basics.Wire input, Basics.Wire output, Basics.Wire control){
 //        super(output); //in the nmos/pmos subclasses is when auto-naming should be done
 //        setInput(input);
 //        setControl(control);
 //    }
 
-    Transistor(Wire input, Wire control, Wire output, String name){
+    public Transistor(Wire input, Wire control, Wire output, String name){
         super(output, name);
         setInput(input);
         setControl(control);
@@ -18,12 +23,12 @@ public abstract class Transistor extends Basic{
 
     //----------------------------------------- Mutators ------------------------------------------------------
 
-    void setInput(Wire input) {
+    public void setInput(Wire input) {
         this.input = input;
         input.addOutput(this);
     }
 
-    void setControl(Wire control) {
+    public void setControl(Wire control) {
         this.control = control;
         control.addOutput(this);
     }
@@ -33,7 +38,7 @@ public abstract class Transistor extends Basic{
 
     public String toString(){
         return (super.toString() +
-                "\nInput: " + input.name + ", Value: " + input.getOut() +
+                "\nBasics.Input: " + input.name + ", Value: " + input.getOut() +
                 "\nControl: " + control.name) + ", Value: " + control.getOut() +
                 "\nOutput: " + output.name + ", Value: " + getOut() + "\n";
     }
@@ -48,7 +53,7 @@ public abstract class Transistor extends Basic{
         Wire t1out = new Wire("n1out");
         Wire t2out = new Wire("p1out");
 
-        Input controlInput = new Input(t1con, true, "Control Input");
+        Input controlInput = new Input(t1con, true, "Control Basics.Input");
 
         Input Vpp = new Input(t1in, true, "Vpp");
         controlInput.setOutput(t1con);
