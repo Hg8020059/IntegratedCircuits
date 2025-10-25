@@ -15,28 +15,28 @@ public class Wire {
 
     //----------------------------------------- Constructors -----------------------------------------------------
 
-    Wire(){
+    public Wire(){
         inputs = new ArrayList<>();
         name = "Wire" + wireNoNameCount++;
     }
 
-    Wire(String name){
+    public Wire(String name){
         inputs = new ArrayList<>();
         this.name = name;
     }
 
     //----------------------------------------- Mutators -----------------------------------------------------
 
-    void addInput(Basic input){
+    public void addInput(Basic input){
         this.inputs.add(input); // We want to reference the original, not create a copy of it
     }
 
-    void addOutput(Transistor output){
+    public void addOutput(Transistor output){
         this.outputs.add(output); // We want to reference the original, not create a copy of it
     }
 
 
-    Boolean getOut(){
+    public Boolean getOut(){
         Boolean out = null;
         for (Basic i : inputs){
             if (i.getOut()){

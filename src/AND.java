@@ -4,7 +4,7 @@ public class AND extends Gates{
     Wire W_input1;
     Wire W_input2;
 
-    AND(Wire inputWire, Wire inputWire2){
+    public AND(Wire inputWire, Wire inputWire2){
         //sets the input wire that was passed in as W_input, then uses that while declaring the PMOS and NMOS as their controls
         // Set the input before setting things that depend on the input wire
         W_input1 = inputWire;
